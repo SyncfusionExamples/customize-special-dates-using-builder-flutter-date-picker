@@ -47,7 +47,7 @@ class BlackoutDates extends State<SpecialDatesCellCustomization> {
 
   Widget cellBuilder(BuildContext context, DateRangePickerCellDetails details) {
     DateTime _visibleDates = details.date;
-    if (isSpecialDay(_visibleDates)) {
+    if (isSpecialDate(_visibleDates)) {
       return Column(
         children: [
           Container(
@@ -77,7 +77,7 @@ class BlackoutDates extends State<SpecialDatesCellCustomization> {
     }
   }
 
-  bool isSpecialDay(DateTime date) {
+  bool isSpecialDate(DateTime date) {
     for (int j = 0; j < _specialDates.length; j++) {
       if (date.year == _specialDates[j].year &&
           date.month == _specialDates[j].month &&
