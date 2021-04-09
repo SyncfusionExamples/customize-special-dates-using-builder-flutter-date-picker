@@ -12,7 +12,7 @@ class SpecialDatesCellCustomization extends StatefulWidget {
 }
 
 class BlackoutDates extends State<SpecialDatesCellCustomization> {
-  List<DateTime> _specialDates;
+  late List<DateTime> _specialDates;
 
   @override
   void initState() {
