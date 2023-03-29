@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
@@ -17,14 +16,14 @@ class BlackoutDates extends State<SpecialDatesCellCustomization> {
   @override
   void initState() {
     _specialDates = <DateTime>[
-      DateTime.now().add(Duration(days: 2)),
-      DateTime.now().add(Duration(days: 3)),
-      DateTime.now().add(Duration(days: 6)),
-      DateTime.now().add(Duration(days: 7)),
-      DateTime.now().add(Duration(days: -2)),
-      DateTime.now().add(Duration(days: -3)),
-      DateTime.now().add(Duration(days: -6)),
-      DateTime.now().add(Duration(days: -7))
+      DateTime.now().add(const Duration(days: 2)),
+      DateTime.now().add(const Duration(days: 3)),
+      DateTime.now().add(const Duration(days: 6)),
+      DateTime.now().add(const Duration(days: 7)),
+      DateTime.now().add(const Duration(days: -2)),
+      DateTime.now().add(const Duration(days: -3)),
+      DateTime.now().add(const Duration(days: -6)),
+      DateTime.now().add(const Duration(days: -7))
     ];
     super.initState();
   }
@@ -38,7 +37,7 @@ class BlackoutDates extends State<SpecialDatesCellCustomization> {
             child: SfDateRangePicker(
               selectionMode: DateRangePickerSelectionMode.single,
               monthViewSettings:
-                  DateRangePickerMonthViewSettings(specialDates: _specialDates),
+              DateRangePickerMonthViewSettings(specialDates: _specialDates),
               cellBuilder: cellBuilder,
             )),
       ),
@@ -46,21 +45,19 @@ class BlackoutDates extends State<SpecialDatesCellCustomization> {
   }
 
   Widget cellBuilder(BuildContext context, DateRangePickerCellDetails details) {
-    DateTime _visibleDates = details.date;
-    if (isSpecialDate(_visibleDates)) {
+    DateTime visibleDates = details.date;
+    if (isSpecialDate(visibleDates)) {
       return Column(
         children: [
-          Container(
-            child: Text(
-              details.date.day.toString(),
-              textAlign: TextAlign.center,
-            ),
+          Text(
+            details.date.day.toString(),
+            textAlign: TextAlign.center,
           ),
-          Divider(
+          const Divider(
             color: Colors.white,
             height: 5,
           ),
-          Icon(
+          const Icon(
             Icons.celebration,
             size: 13,
             color: Colors.red,

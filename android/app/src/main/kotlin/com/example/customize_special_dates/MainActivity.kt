@@ -1,4 +1,4 @@
-package com.example.flutter_visibledates_calendar
+package com.example.customize_special_dates
 
 import io.flutter.embedding.android.FlutterActivity
 
